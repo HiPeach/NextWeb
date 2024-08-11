@@ -27,7 +27,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: '#fafeff', color: '#333', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
+    <div style={{ backgroundColor: 'hsl(205deg, 20%, 94%)', color: '#333', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
       {/* 顶栏 */}
       <header style={{ width: '100%', display: 'flex', justifyContent: 'space-between', padding: '20px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
         <span style={{ fontSize: '20px', fontWeight: 'bold' }}>HiPeach</span>
@@ -41,7 +41,7 @@ const Home = () => {
       <main style={{ flexGrow: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
         <h1 style={{ margin: 0, fontSize: '48px' }}>👋 Hello</h1>
         <h2 style={{ margin: 0, fontSize: '48px' }}>
-          I'm <span style={{ backgroundColor: '#bfdbfe', borderRadius: '8px', padding: '10px', margin: '10px 0', fontSize: '36px', fontWeight: 'bold' }}>Peach</span>
+          I'm <span style={{ backgroundColor: '#B0CBE6', borderRadius: '8px', padding: '10px', margin: '10px 0', fontSize: '45px', fontWeight: 'bold' }}>Peach</span>
         </h2>
       </main>
 
@@ -51,7 +51,7 @@ const Home = () => {
         <p>
           <a href="https://beian.miit.gov.cn/" style={{ textDecoration: 'none', color: '#7d7d7d' }}>桂ICP备2023000849号-1</a>
         </p>
-        <p><strong>Copyright ©</strong> 2022 - 2024 HiPeach Inc. All Rights Reserved.</p>
+        <p><strong>Copyright ©</strong> 2022 - 2024 HiPeach Inc.</p>
       </footer>
     </div>
   );
