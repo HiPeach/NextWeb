@@ -3,28 +3,28 @@
 import React, { useEffect, useState } from 'react';
 
 const Home = () => {
-  // 计算运行时间
-  const [runTime, setRunTime] = useState('');
+  const [greeting, setGreeting] = useState('');
+
+  const greetings = {
+    zh: '你好',        // 中文
+    en: 'Hello',       // 英文
+    ko: '안녕하세요',   // 韩语
+    fr: 'Bonjour',     // 法语
+    de: 'Hallo',       // 德语
+    ja: 'こんにちは',   // 日语
+    pt: 'Olá',         // 葡萄牙语
+    es: 'Hola',        // 西班牙语
+    it: 'Ciao',        // 意大利语
+  };
 
   useEffect(() => {
-    const startDate = new Date('2022-12-25T00:00:00');
-    const updateTime = () => {
-      const now = new Date();
-      const diff = now - startDate;
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      setRunTime(`已运行${days}天${hours}时${minutes}分${seconds}秒`);
-    };
-
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-
-    return () => clearInterval(interval);
+    const randomKey = Object.keys(greetings)[Math.floor(Math.random() * Object.keys(greetings).length)];
+    setGreeting(greetings[randomKey]);
   }, []);
+
+  const handleGreetingClick = () => {
+    setGreeting(greetings['en']);
+  };
 
   return (
     <div style={{ backgroundColor: 'hsl(205deg, 20%, 94%)', color: '#333', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -39,15 +39,18 @@ const Home = () => {
 
       {/* 中间内容 */}
       <main style={{ flexGrow: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-        <h1 style={{ margin: 0, fontSize: '48px' }}>👋 Hello</h1>
-        <h2 style={{ margin: 0, fontSize: '48px' }}>
-          I'm <span style={{ backgroundColor: '#B0CBE6', borderRadius: '8px', padding: '10px', margin: '10px 0', fontSize: '45px', fontWeight: 'bold' }}>Peach</span>
+        <h1 
+          style={{ margin: 0, fontSize: '48px', cursor: 'pointer', transition: 'all 0.5s ease', fontFamily: 'Pacifico', fontWeight: '400', marginBottom: '10px' }} 
+          onClick={handleGreetingClick}
+        >👋 {greeting}
+        </h1>
+        <h2 style={{ margin: 0, fontSize: '48px', fontWeight: 'bold' }}>
+          I'm <span style={{ backgroundColor: '#B0CBE6', borderRadius: '8px', padding: '10px', margin: '10px 0', fontSize: '45px' }}>Peach</span>
         </h2>
       </main>
 
       {/* 页脚 */}
       <footer style={{ padding: '20px', textAlign: 'center', color: '#7d7d7d' }}>
-        <p>{runTime}</p>
         <p>
           <a href="https://beian.miit.gov.cn/" style={{ textDecoration: 'none', color: '#7d7d7d' }}>桂ICP备2023000849号-1</a>
         </p>
