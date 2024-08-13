@@ -31,3 +31,8 @@ body {
     text-wrap: balance;
   }
 }
+
+@font-face {
+  font-family: 'hello';
+  src: url('https://cdn.opeach.cn/font/hello.ttf') format('truetype');
+}

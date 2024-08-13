@@ -7,7 +7,7 @@ const Home = () => {
 
   const greetings = {
     zh: '你好',        // 中文
-    en: 'Hello',       // 英文
+    en: 'Hello',       // 英语
     ko: '안녕하세요',   // 韩语
     fr: 'Bonjour',     // 法语
     de: 'Hallo',       // 德语
@@ -15,10 +15,15 @@ const Home = () => {
     pt: 'Olá',         // 葡萄牙语
     es: 'Hola',        // 西班牙语
     it: 'Ciao',        // 意大利语
+    vi: 'Xin chào',    // 越南语
+    id: 'Halo',        // 印尼语
+    sv: 'Hej',         // 瑞典语
+    no: 'Hei',         // 挪威语
+    sk: 'Ahoj',        // 斯洛伐克语
   };
 
   useEffect(() => {
-    const randomKey = Object.keys(greetings)[Math.floor(Math.random() * Object.keys(greetings).length)];
+    const randomKey = Object.keys(greetings)[Math.floor(Math.random() * Object.keys(greetings).length)] as keyof typeof greetings;
     setGreeting(greetings[randomKey]);
   }, []);
 
@@ -40,7 +45,7 @@ const Home = () => {
       {/* 中间内容 */}
       <main style={{ flexGrow: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
         <h1 
-          style={{ margin: 0, fontSize: '48px', cursor: 'pointer', transition: 'all 0.5s ease', fontFamily: 'Pacifico', fontWeight: '400', marginBottom: '10px' }} 
+          style={{ margin: 0, fontSize: '48px', cursor: 'pointer', transition: 'all 0.5s ease', fontFamily: 'hello', fontWeight: '400', marginBottom: '10px' }} 
           onClick={handleGreetingClick}
         >👋 {greeting}
         </h1>
