@@ -57,9 +57,12 @@ const Home = () => {
       {/* 页脚 */}
       <footer style={{ padding: '20px', textAlign: 'center', color: '#7d7d7d' }}>
         <p>
+          <a href="https://icp.gov.moe/?keyword=20250001" style={{ textDecoration: 'none', color: '#7d7d7d' }}>萌ICP备20250001号</a>
+        </p>
+        <p>
           <a href="https://beian.miit.gov.cn/" style={{ textDecoration: 'none', color: '#7d7d7d' }}>桂ICP备2023000849号-1</a>
         </p>
-        <p><strong>Copyright ©</strong> 2022 - 2024 HiPeach Inc.</p>
+        <p><strong>Copyright ©</strong> 2022 - 2025 HiPeach Inc.</p>
       </footer>
     </div>
   );
