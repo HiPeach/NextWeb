@@ -1,11 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  // 如果以后需要配置，就写在这里
+  // 例如：
+  // reactStrictMode: true,
+};
 
-export default {
-  nextConfig,
-  eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: true,
-  },
-}
+export default nextConfig;
